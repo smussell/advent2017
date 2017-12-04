@@ -19,11 +19,10 @@ console.log(`
 127	375	330	257	220	295	145	335	304	165	151	141	289	256	195	272
 `.trim().split('\n')
   .reduce((a, c) => {
-    const s = c.trim().split('\t').map(d => parseInt(d, 10))
+    const s = c.trim().split('\t').map(d => parseInt(d, 10));
     return a +
-      (Math.max.apply(null, s) -
-        Math.min.apply(null, s))
-  }, 0);
+      (Math.max.apply(null, s) - Math.min.apply(null, s));
+  }, 0)
 );
 
 // part 2
@@ -47,14 +46,13 @@ console.log(`
 127	375	330	257	220	295	145	335	304	165	151	141	289	256	195	272
 `.trim().split('\n')
   .reduce((a, c) => {
-    const s = c.trim().split('\t')
-      .map(d => parseInt(d, 10))
+    const s = c.trim().split('\t').map(d => parseInt(d, 10))
 
-    let ff = s.filter((d, i) =>
+    const ff = s.filter((d, i) =>
       s.find((f, j) => (
         i !== j && (f % d == 0 || d % f == 0)
       ))).sort((a, b) => b - a)
 
-    return (ff[0] / ff[1]) + a
+    return (ff[0] / ff[1]) + a;
   }, 0)
 );
