@@ -47,7 +47,6 @@ console.log(`
 `.trim().split('\n')
   .reduce((a, c) => {
     const s = c.trim().split('\t').map(d => parseInt(d, 10))
-
     const ff = s.filter((d, i) =>
       s.find((f, j) => (
         i !== j && (f % d == 0 || d % f == 0)

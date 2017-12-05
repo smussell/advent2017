@@ -65,7 +65,7 @@ function solveCaptcha(list) {
 
 function solveCaptcha2(list) {
   return list.reduce((a, c, i) => (
-    list[(i + (list.length / 2)) % list.length] === c ? a + c : a
+    list[(i + (list.length / 2)) % list.length] === c ? a + c : a;
   ), 0)
 }
 
