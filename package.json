@@ -1,0 +1,22 @@
+{
+  "name": "advent2017",
+  "version": "1.0.0",
+  "description": "This is a place to post my solutions to [http://adventofcode.com/2017/](http://adventofcode.com/2017/)",
+  "main": "day1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smussell/advent2017.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smussell/advent2017/issues"
+  },
+  "homepage": "https://github.com/smussell/advent2017#readme",
+  "dependencies": {
+    "ramda": "^0.25.0"
+  }
+}
