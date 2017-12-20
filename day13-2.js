@@ -51,8 +51,6 @@ const firewalls = `
     }), {})
 
 const keys = Object.keys(firewalls);
-const indexMap = keys.reduce((a, c, i) => ({[c]: i, ...a}), {});
-let state = keys.map(d => ([0, true]));
 const max = Math.max.apply(Math, keys);
 
 function findPos(t, range) {
@@ -63,17 +61,15 @@ function findPos(t, range) {
 
 function run(start) {
   let me = 0;
-  let time = start;
   let caught = false;
   
   while (me <= max) {
     if(firewalls[me]) {
-      const pos = findPos(time, firewalls[me].range);
+      const pos = findPos(me + start, firewalls[me].range);
       if(pos === 0) {
         caught = true;
       }
     }
-    time++;
     me++;
   }
   return caught;
