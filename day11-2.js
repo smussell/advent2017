@@ -14,9 +14,12 @@ let moves = {
   nw: [-1, 0, 1],
 };
 
-function move(position, dir) {
-  return position.map((d, i) => d + moves[dir][i]);
-}
+const move = (position, dir) => position.map((d, i) => d + moves[dir][i]);
+
+const cubeDistance = (a, b) => 
+  (Math.abs(a[0] - b[0]) 
+    + Math.abs(a[1] - b[1]) 
+    + Math.abs(a[2] - b[2])) / 2;
 
 let maxDist = 0;
 movements.forEach(d => {
@@ -25,13 +28,7 @@ movements.forEach(d => {
   if(newDist > maxDist) {
     maxDist = newDist;
   }
-})
-
-function cubeDistance(a, b) {
-    return (Math.abs(a[0] - b[0]) 
-      + Math.abs(a[1] - b[1]) 
-      + Math.abs(a[2] - b[2])) / 2;
-}
+});
 
 maxDist
 

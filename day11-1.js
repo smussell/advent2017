@@ -12,19 +12,16 @@ let moves = {
   nw: [-1, 0, 1],
 };
 
-function move(position, dir) {
-  return position.map((d, i) => d + moves[dir][i]);
-}
+const move = (position, dir) => position.map((d, i) => d + moves[dir][i]);
 
 movements.forEach(d => {
   position = move(position, d)
 })
 
-function cubeDistance(a, b) {
-    return (Math.abs(a[0] - b[0]) 
-      + Math.abs(a[1] - b[1]) 
-      + Math.abs(a[2] - b[2])) / 2;
-}
+const cubeDistance = (a, b) => 
+  (Math.abs(a[0] - b[0]) 
+    + Math.abs(a[1] - b[1]) 
+    + Math.abs(a[2] - b[2])) / 2;
 
 const ans = cubeDistance(position, [0, 0 , 0]);
 ans

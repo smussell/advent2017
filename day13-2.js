@@ -54,8 +54,8 @@ const keys = Object.keys(firewalls);
 const max = Math.max.apply(Math, keys);
 
 function findPos(t, range) {
-  const i = Math.floor(t /(range - 1));
-  const d = t % (range - 1);
+  const i = Math.floor(t /(range - 1)),
+    d = t % (range - 1);
   return i % 2 === 0 ? 0 + d : (range - 1) - d;  
 }
 
